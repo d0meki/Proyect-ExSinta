@@ -1,0 +1,53 @@
+{
+    "reglas": [
+        {
+            "nombre": "ambiente",
+            "premisa": {
+                "literal": [
+                    {
+                        "variable_id":"110ec58a-a0f2-4ac4-8393-c866d813b8d1",
+                        "variable": "clima",
+                        "valor": "calor",
+                        "operador_logico": "igual",
+                        "not": false
+                    },
+                    {
+                        "variable_id":"110ec58a-a0f2-4ac4-8393-c866d813b8d1",
+                        "variable": "clima",
+                        "valor": "frio",
+                        "operador_logico": "diferente",
+                        "not": false
+                    }
+                ]
+            },
+            "hecho": [
+                {
+                    "variable_id":"6c84fb90-12c4-11e1-840d-7b25c5ee775a",
+                    "variable": "temperatura",
+                    "valor": "100"
+                }
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "variable_id":"110ec58a-a0f2-4ac4-8393-c866d813b8d1",
+            "variable": "clima",
+            "valor": [
+                "calor",
+                "lluvia",
+                "frio",
+                "nublado"
+            ],
+            "tipo_valor": "escalar"
+        },
+        {
+            "variable_id":"6c84fb90-12c4-11e1-840d-7b25c5ee775a",
+            "variable": "temperatura",
+            "valor": [
+                "100"
+            ],
+            "tipo_valor": "numerico"
+        }
+    ]
+}
