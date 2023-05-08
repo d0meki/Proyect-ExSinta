@@ -55,10 +55,9 @@ class EditVariableScalar extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        formularioProvider.variable,style: const TextStyle(
-                              color: Colors.black, fontSize: 20)
-                      ),
+                      Text(formularioProvider.variable,
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 20)),
                     ],
                   ),
                 ),
@@ -160,41 +159,40 @@ class EditVariableScalar extends StatelessWidget {
                         'Quitar Valor',
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: () async {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            // devuelve el widget del diálogo
-                            return AlertDialog(
-                              title: const Text('Alert'),
-                              content: const Text(
-                                  'Los cambios Afectaran a todas las reglas donde se está usando esta variable'),
-                              actions: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                    baseConocimientoProvider.editVariableScalar(
-                                        formularioProvider.variable,
-                                        formularioProvider.valores,
-                                        formularioProvider.variableId);
-                                    formularioProvider.limpiarFormulario();
-                                    Navigator.pushNamed(
-                                        context, 'list_variable');
-                                  },
-                                  child: const Text('Aceptar'),
-                                ),
-                              ],
-                            );
-                          },
+                  ],
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        // devuelve el widget del diálogo
+                        return AlertDialog(
+                          title: const Text('Alert'),
+                          content: const Text(
+                              'Los cambios Afectaran a todas las reglas donde se está usando esta variable'),
+                          actions: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                baseConocimientoProvider.editVariableScalar(
+                                    formularioProvider.variable,
+                                    formularioProvider.valores,
+                                    formularioProvider.variableId);
+                                formularioProvider.limpiarFormulario();
+                                Navigator.pushNamed(context, 'list_variable');
+                              },
+                              child: const Text('Aceptar'),
+                            ),
+                          ],
                         );
                       },
-                      child: const Text(
-                        'Guardar Cambios',
-                      ),
-                    ),
-                  ],
-                )
+                    );
+                  },
+                  child: const Text(
+                    'Guardar Cambios',
+                  ),
+                ),
               ],
             )),
           )),
